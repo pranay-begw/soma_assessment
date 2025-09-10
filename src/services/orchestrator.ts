@@ -46,7 +46,7 @@ export class AutomationOrchestrator {
       }
 
       // If no LinkedIn or website data, search for public info
-      if (!linkedinData && !companyData) {
+      if (!linkedinData || !companyData) {
         console.log('Orchestrator: no LinkedIn/website provided, searching for public info');
         const searchResults = await searchSearch(
           `${submission.firstName} ${submission.lastName} ${submission.company}`
